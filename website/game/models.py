@@ -108,8 +108,10 @@ def checkVertical(userId): #checks vertical between levels assuming the board is
 def showBoard(token):
     global board
     if int(token) > NUM_CLIENTS:
+        #Won't allow players that exceed the maximum number
         data = False
     else:
+        #When the number of players are within the limit, a json string is returned 
         data = json.dumps(board)
     return data
 def checkWinningPlayer():

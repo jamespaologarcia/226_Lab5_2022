@@ -27,7 +27,9 @@ def get(request, token):
             result = 'Welcome player ' + token + '<br> It is '+yourTurn+' your turn<br>'
         else:
             result = 'Player ' + str(winningPlayer) + ' wins<br>'
+            #displays clear board link once winning conditions are met
             result += '<a href="/game/clear/'+str(token)+'">Play again? </a><br>'
+        #json string is decoded to python list
         data = json.loads(board)
         itemLevel = 0
         for level in data:

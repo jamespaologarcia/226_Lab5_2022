@@ -24,7 +24,7 @@ def get(request, token):
         if turn == True:
             yourTurn = ''
         if winningPlayer == False:
-            result = 'Welcome player ' + token + '<br> It is '+yourTurn+' your turn<br>'
+            result = 'Welcome player ' + token + '!<br> It is '+yourTurn+' your turn<br>'
         else:
             result = 'Player ' + str(winningPlayer) + ' wins<br>'
             #displays clear board link once winning conditions are met
@@ -49,7 +49,7 @@ def get(request, token):
             result = result + '</table>'  
             itemLevel += 1
     else:
-        result = 'Maximum players reached'
+        result = 'Maximum players reached!'
     return HttpResponse(result)
 
 def put(request, level, row, col, token):

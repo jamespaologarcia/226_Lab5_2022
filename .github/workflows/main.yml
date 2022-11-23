@@ -14,5 +14,7 @@ jobs:
         run: pip3 install pipenv
       - name: Run the tests
         run: |
+          echo 'DJANGO_SECRET_KEY=TESTING' > .env
           pipenv install django
           pipenv run website/manage.py test game
+
